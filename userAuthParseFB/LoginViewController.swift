@@ -17,15 +17,9 @@ class LoginViewController: UIViewController {
         
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-            
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) in
         }))
-        
         self.presentViewController(alert, animated: true, completion: nil)
-        
     }
     
     @IBOutlet weak var username: UITextField!
@@ -71,11 +65,13 @@ class LoginViewController: UIViewController {
                     
                     errorMessage = errorString
                     
-                }
+                
                 print("login failed")
                 print(error)
                 self.displayAlert("Failed Login", message: errorMessage)
                 
+                
+                }
             }
 
             
@@ -95,6 +91,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(PFUser.currentUser())
 
         // Do any additional setup after loading the view.
     }

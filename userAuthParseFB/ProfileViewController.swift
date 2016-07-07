@@ -17,16 +17,11 @@ class ProfileViewController: UIViewController {
         
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-            
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (UIAlertAction) in
         }))
-        
         self.presentViewController(alert, animated: true, completion: nil)
-        
     }
+ 
     
     @IBOutlet weak var username: UILabel!
     
